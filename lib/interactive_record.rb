@@ -60,7 +60,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attribute_hash)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first.to_s} = "#{attribute_hash.values.first}"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute_hash.keys.first.to_s} = '#{attribute_hash.values.first}'"
     
     DB[:conn].execute(sql)
   end
